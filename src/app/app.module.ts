@@ -1,10 +1,9 @@
+import 'hammerjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import 'hammerjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -16,8 +15,10 @@ import {
   MatListModule,
   MatGridListModule,
   MatCardModule,
-  MatMenuModule
+  MatMenuModule,
 } from '@angular/material';
+
+import { Routes, RouterModule } from '@angular/router';
 import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { OffersComponent } from './offers/offers.component';
@@ -25,6 +26,16 @@ import { ShopsComponent } from './shops/shops.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
+
+// Route definition
+const routes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'offers', component: OffersComponent},
+  {path: 'shops', component: ShopsComponent},
+  {path: 'gallery', component: GalleryComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'blog', component: BlogComponent},
+];
 
 @NgModule({
   declarations: [
@@ -36,7 +47,7 @@ import { BlogComponent } from './blog/blog.component';
     ShopsComponent,
     GalleryComponent,
     ContactComponent,
-    BlogComponent
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +61,8 @@ import { BlogComponent } from './blog/blog.component';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
