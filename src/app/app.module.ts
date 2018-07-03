@@ -17,6 +17,7 @@ import {
   MatCardModule,
   MatMenuModule,
 } from '@angular/material';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
@@ -62,6 +63,7 @@ const routes: Routes = [
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatSnackBarModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
