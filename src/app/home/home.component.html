@@ -14,16 +14,27 @@
         </div>
     </mat-card-content>
 </mat-card>
-<!-- <mat-card>
-  <mat-card-subtitle>Push Notification Example</mat-card-subtitle>
+<mat-card>
+  <mat-card-title>Push Notification Example</mat-card-title>
   <mat-card-content>
       <mat-grid-list cols="1" rowHeight="50px">
           <mat-grid-tile>
-              <button mat-raised-button (click)="sendPushNotification()">Send Push Notification</button>
+              <form class="example-form" [formGroup]="pushForm">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      formControlName="pushMessage"
+                      placeholder="Notification Message"
+                      value="">
+                  </mat-form-field>
+                </form>
           </mat-grid-tile>
           <mat-grid-tile>
-              <button mat-raised-button (click)="toggleNotificationSubscription(!isPushNotifyActive)">{{ isPushNotifyActive ? 'Subscribe': 'Unsubscribe'}} Push Notification</button>
+              <button mat-raised-button (click)="sendPushNotification()">Send Push Notification</button>
           </mat-grid-tile>
+          <!-- <mat-grid-tile>
+              <button mat-raised-button (click)="toggleNotificationSubscription(!isPushNotifyActive)">{{ isPushNotifyActive ? 'Subscribe': 'Unsubscribe'}} Push Notification</button>
+          </mat-grid-tile> -->
       </mat-grid-list>
   </mat-card-content>
-</mat-card> -->
+</mat-card>

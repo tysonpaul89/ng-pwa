@@ -18,6 +18,8 @@ import {
   MatMenuModule,
 } from '@angular/material';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
@@ -64,6 +66,8 @@ const routes: Routes = [
     MatCardModule,
     MatMenuModule,
     MatSnackBarModule,
+    MatInputModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
