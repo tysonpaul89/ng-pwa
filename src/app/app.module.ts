@@ -20,6 +20,7 @@ import {
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
@@ -67,6 +68,7 @@ const routes: Routes = [
     MatMenuModule,
     MatSnackBarModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],

@@ -12,18 +12,33 @@ export class AppComponent implements OnInit {
   constructor(private swUpdate: SwUpdate, private snackBar: MatSnackBar) {
   }
   ngOnInit() {
-    this.swUpdate.available
-      .subscribe((event) => {
-        console.log('Update available');
-        const snack = this.snackBar.open(
-          'Update is available',
-          'Reload',
-          { duration: 3000}
+
+    // Event to show network status
+    window.addEventListener('load', () => {
+      const updateOnlineStatus = (event) => {
+        const message = navigator.onLine ? "Yay! Your\'e Online" : 'Opps! Your\'e Offline';
+        this.snackBar.open(
+          message,
+          'Dismiss'
         );
-        snack.onAction().subscribe(() => {
-          window.location.reload();
-        });
-      });
-      this.swUpdate.checkForUpdate();
+      }
+
+      window.addEventListener('online',  updateOnlineStatus);
+      window.addEventListener('offline', updateOnlineStatus);
+    });
+
+    // this.swUpdate.available
+    //   .subscribe((event) => {
+    //     console.log('Update available');
+    //     const snack = this.snackBar.open(
+    //       'Update is available',
+    //       'Reload',
+    //       { duration: 3000}
+    //     );
+    //     snack.onAction().subscribe(() => {
+    //       window.location.reload();
+    //     });
+    //   });
+    //   this.swUpdate.checkForUpdate();
   }
 }
