@@ -23,13 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import { Routes, RouterModule } from '@angular/router';
-import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { OffersComponent } from './offers/offers.component';
 import { ShopsComponent } from './shops/shops.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { ContactComponent } from './contact/contact.component';
-import { BlogComponent } from './blog/blog.component';
 import { ExampleComponent } from './example/example.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { ShopDetailComponent } from './shop-detail/shop-detail.component';
@@ -40,9 +36,6 @@ const routes: Routes = [
   // {path: 'offers', component: OffersComponent},
   {path: 'shops', component: ShopsComponent},
   {path: 'shops/:id', component: ShopDetailComponent},
-  // {path: 'gallery', component: GalleryComponent},
-  // {path: 'contact', component: ContactComponent},
-  // {path: 'blog', component: BlogComponent},
   {path: 'example', component: ExampleComponent},
 ];
 
@@ -50,13 +43,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AppLayoutComponent,
-    AppDashboardComponent,
     HomeComponent,
     OffersComponent,
     ShopsComponent,
-    GalleryComponent,
-    ContactComponent,
-    BlogComponent,
     ExampleComponent,
     ShopDetailComponent,
   ],
