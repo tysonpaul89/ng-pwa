@@ -1,3 +1,11 @@
-<p>
-  shops works!
-</p>
+<mat-grid-list cols="4">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        >
+        <a [routerLink]="tile.href">
+          <img src="{{tile.url}}">
+        </a>
+    </mat-grid-tile>
+  </mat-grid-list>

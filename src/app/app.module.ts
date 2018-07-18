@@ -30,15 +30,20 @@ import { ShopsComponent } from './shops/shops.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
+import { ExampleComponent } from './example/example.component';
+import {SlideshowModule} from 'ng-simple-slideshow';
+import { ShopDetailComponent } from './shop-detail/shop-detail.component';
 
 // Route definition
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'offers', component: OffersComponent},
+  // {path: 'offers', component: OffersComponent},
   {path: 'shops', component: ShopsComponent},
-  {path: 'gallery', component: GalleryComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: 'blog', component: BlogComponent},
+  {path: 'shops/:id', component: ShopDetailComponent},
+  // {path: 'gallery', component: GalleryComponent},
+  // {path: 'contact', component: ContactComponent},
+  // {path: 'blog', component: BlogComponent},
+  {path: 'example', component: ExampleComponent},
 ];
 
 @NgModule({
@@ -52,6 +57,8 @@ const routes: Routes = [
     GalleryComponent,
     ContactComponent,
     BlogComponent,
+    ExampleComponent,
+    ShopDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +77,7 @@ const routes: Routes = [
     MatInputModule,
     MatDialogModule,
     ReactiveFormsModule,
+    SlideshowModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],

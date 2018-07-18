@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { SwUpdate } from '@angular/service-worker';
+import { isDevMode } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -27,18 +28,20 @@ export class AppComponent implements OnInit {
       window.addEventListener('offline', updateOnlineStatus);
     });
 
-    // this.swUpdate.available
-    //   .subscribe((event) => {
-    //     console.log('Update available');
-    //     const snack = this.snackBar.open(
-    //       'Update is available',
-    //       'Reload',
-    //       { duration: 3000}
-    //     );
-    //     snack.onAction().subscribe(() => {
-    //       window.location.reload();
-    //     });
-    //   });
-    //   this.swUpdate.checkForUpdate();
+    if (!isDevMode()) {
+      this.swUpdate.available
+      .subscribe((event) => {
+        console.log('Update available');
+        const snack = this.snackBar.open(
+          'Update is available',
+          'Reload',
+          { duration: 3000}
+        );
+        snack.onAction().subscribe(() => {
+          window.location.reload();
+        });
+      });
+      this.swUpdate.checkForUpdate();
+    }
   }
 }
