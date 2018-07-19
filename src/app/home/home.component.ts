@@ -6,7 +6,7 @@ import { IImage } from 'ng-simple-slideshow/src/app/modules/slideshow/IImage';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  imageUrls: IImage[]= [
+  imageUrls: IImage[] = [
     { url: 'http://oberonmall.com/wp-content/uploads/2018/04/02.jpg'},
     { url: 'http://oberonmall.com/wp-content/uploads/2018/04/04.jpg'},
     { url: 'http://oberonmall.com/wp-content/uploads/2018/04/03.jpg'},

@@ -1,3 +1,12 @@
-<p>
-  shop-detail works!
-</p>
+<div *ngIf="shopDetail !== undefined">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{shopDetail.title}}</mat-card-title>
+      <mat-card-subtitle>{{shopDetail.socialLink}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{shopDetail.description}}</p>
+    </mat-card-content>
+    <img mat-card-image src="{{shopDetail.indoorMapImage}}" alt="Mall Map">
+  </mat-card>
+</div>
